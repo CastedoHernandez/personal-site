@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:personal_site/section/about_section.dart';
 import 'package:personal_site/section/experience_section.dart';
 import 'package:personal_site/section/header_section.dart';
+import 'package:personal_site/section/intro_section.dart';
 import 'package:personal_site/section/project_section.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String text1 = "Hello! I'm Carlos.";
+  static const String text2 = "I can bring your ideas to reality.";
+
   const HomeScreen({super.key});
 
   @override
@@ -13,30 +17,23 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         margin: const EdgeInsets.only(
             left: 70.0, top: 20.0, right: 70.0, bottom: 20.0),
-        child: const Column(
+        child: Column(
           children: [
-            HeaderSection(),
+            const HeaderSection(),
             Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    "Hello! I'm Carlos.",
-                    style: TextStyle(
-                      fontSize: 54,
-                      fontFamily: 'TitiliumWeb',
-                    ),
+              child: ScrollConfiguration(
+                behavior:
+                    ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                child: const SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      IntroScreen(),
+                      AboutSection(),
+                      ProjectSection(),
+                      ExperienceSection(),
+                    ],
                   ),
-                  Text(
-                    "I can bring your ideas to reality.",
-                    style: TextStyle(
-                      fontSize: 54,
-                      fontFamily: 'TitiliumWeb',
-                    ),
-                  ),
-                  AboutSection(),
-                  ProjectSection(),
-                  ExperienceSection(),
-                ],
+                ),
               ),
             )
           ],

@@ -5,22 +5,33 @@ class ExperienceSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return const Column(
       children: [
         Text(
-          'Vodafone',
+          'Experience',
           style: TextStyle(
             fontSize: 54,
             fontFamily: 'TitiliumWeb',
           ),
         ),
-        Text(
-          "ING",
-          style: TextStyle(
-            fontSize: 54,
-            fontFamily: 'TitiliumWeb',
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              'Vodafone',
+              style: TextStyle(
+                fontSize: 54,
+                fontFamily: 'TitiliumWeb',
+              ),
+            ),
+            Text(
+              "ING",
+              style: TextStyle(
+                fontSize: 54,
+                fontFamily: 'TitiliumWeb',
+              ),
+            ),
+          ],
         ),
       ],
     );
